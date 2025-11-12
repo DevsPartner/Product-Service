@@ -1,0 +1,16 @@
+cart-service/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── routes.py
+│   ├── crud.py
+│   ├── database.py
+│   └── prepare_db.py
+│
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── .env
