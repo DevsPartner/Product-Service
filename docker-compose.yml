@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   db:
     image: postgres:15
@@ -9,7 +10,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "6543:5432"   # Host:Container → EXTERN 6543, INTERN 5432 (korrekt!)
 
   product-service:
     build: .
@@ -18,8 +19,9 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/products_db
     ports:
-      - "8000:8000"
+      - "8001:8001"   # Service exposed correctly
     volumes:
       - ./:/app
+
 volumes:
   pgdata:

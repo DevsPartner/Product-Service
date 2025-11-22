@@ -4,11 +4,23 @@ from typing import List
 from sqlalchemy.orm import Session
 from . import models, schemas, crud, mapper
 from .database import engine, Base, get_db
+from fastapi.middleware.cors import CORSMiddleware
 
 # Tabellen erstellen, falls noch nicht vorhanden (nur für Entwicklung; in Prod evtl. migrations verwenden)
 Base.metadata.create_all(bind=engine)
-
+origins = [
+    "http://localhost:3000",
+    "http://123.0.0.1:3000",
+]
 app = FastAPI(title="Product Service")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,  # wichtig für cookies
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def root():
