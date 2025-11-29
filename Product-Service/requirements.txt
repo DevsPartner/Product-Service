@@ -1,6 +1,0 @@
-fastapi #web framwork
-uvicorn[standard] # ASGI-server.
-SQLAlchemy>=1.4 #ORM für DB modelle
-psycopg2-binary #PostgrsSQL Driver
-pydantic # for DTO Validierung 
-python-dotenv # einfache ENV_Var Handlung
