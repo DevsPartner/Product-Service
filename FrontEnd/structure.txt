@@ -1,7 +1,0 @@
-FrontEnd/
-├── frontend/
-│   ├── pages/
-│   ├── components/
-│   ├── package.json
-│   └── Dockerfile
-└── docker-compose.yml
